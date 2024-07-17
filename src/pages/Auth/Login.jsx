@@ -8,10 +8,16 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/dashboard");
+  };
+
   return (
     <>
       <CardBody className="w-full sm:w-[350px]">
@@ -41,7 +47,11 @@ export const Login = () => {
           <p className="mb-5 text-center text-sm text-blue-500 hover:underline">
             Forgot password?
           </p>
-          <Button colorScheme="blue" className="mb-5 w-full">
+          <Button
+            colorScheme="blue"
+            className="mb-5 w-full"
+            onClick={() => handleNavigation()}
+          >
             Login
           </Button>
           <div className="inline-flex w-full justify-center gap-x-1 text-sm">
