@@ -26,7 +26,7 @@ export const SidebarItem = ({ route, icon, children, isSubItem }) => {
   };
 
   return (
-    <Link to={route} onClick={!isSubItem ?? toggleSidebar}>
+    <Link to={route} onClick={!isSubItem && toggleSidebar}>
       <Flex
         align="center"
         px="4"

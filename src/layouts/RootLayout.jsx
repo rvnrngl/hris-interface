@@ -12,12 +12,15 @@ import {
   IconButton,
   useColorModeValue,
   useDisclosure,
+  Menu,
+  MenuButton,
 } from "@chakra-ui/react";
 
 import { FaBell } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import { Sidebar } from "../components/Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
+import { NavbarMenu } from "../components/Menu/NavbarMenu";
 
 export const RootLayout = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -53,13 +56,7 @@ export const RootLayout = () => {
 
             <Flex align="center">
               <Icon color="gray.500" as={FaBell} cursor="pointer" />
-              <Avatar
-                ml="4"
-                size="sm"
-                name="RavenRingel"
-                src="https://avatars2.githubusercontent.com/u/37842853?v=4"
-                cursor="pointer"
-              />
+              <NavbarMenu />
             </Flex>
           </Flex>
 
