@@ -1,5 +1,9 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 export const RootLayout = () => {
-  return <div>RootLayout</div>;
+  return <div>
+    <Outlet></Outlet>
+
+  </div>;
 };
