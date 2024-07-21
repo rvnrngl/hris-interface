@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Flex, Icon, Text, useColorModeValue } from "@chakra-ui/react";
 import { AiOutlineTeam, AiOutlineHome } from "react-icons/ai";
-import { BsFolder2, BsCalendarCheck } from "react-icons/bs";
+import { BsFolder2, BsCalendarCheck, BsFolder } from "react-icons/bs";
 import { RiFlashlightFill } from "react-icons/ri";
 import { SidebarItem } from "./SidebarItem";
 import { Link } from "react-router-dom";
@@ -9,6 +9,12 @@ import { SidebarItemWithDropdown } from "./SidebarItemWithDropdown";
 
 export const SidebarContent = ({ ...props }) => {
   const leaveSubItems = [
+    {
+      route: "/leave/form",
+      label: "Leave Form",
+      icon: BsFolder,
+      isSubItem: true,
+    },
     {
       route: "/leave/approval",
       label: "Approval",
