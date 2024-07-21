@@ -1,9 +1,13 @@
+import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { RootLayout } from "./layouts/RootLayout";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { AuthLayout } from "./layouts/AuthLayout";
 import { Login } from "./pages/Auth/Login";
 import { Register } from "./pages/Auth/Register";
+import Approval from "./pages/Approval/Approval";
+import LeaveDetails from './pages/LeaveDetails/LeaveDetails';
+import LeaveRequest from './pages/LeaveRequest/LeaveRequest';
 import { Personal } from "./pages/Personal/Personal";
 import { LeaveList } from "./pages/Leave/LeaveList";
 import { Approval } from "./pages/Leave/Approval";
