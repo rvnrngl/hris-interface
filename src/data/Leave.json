@@ -1,0 +1,87 @@
+[   
+     {
+        "id": 1,
+        "name": "John Doe",
+        "status": "Pending",
+        "age": 30,
+        "department": "Marketing",
+        "leaveType": "Vacation Leave",
+        "duration": 3
+      
+       
+      },
+      {
+        "id": 2,
+        "name": "John Doe",
+        "status": "approve",
+        "age": 30,
+        "department": "HR",
+        "leaveType": "Vacation Leave",
+        "duration": 5
+      
+      
+      },
+      {
+        "id": 3,
+        "name": "John Doe",
+        "status": "Pending",
+        "age": 30,
+        "department": "IT",
+        "leaveType": "Vacation Leave",
+        "duration": 1
+      
+      },
+      {
+        "id": 4,
+        "name": "John Doe",
+        "status": "Pending",
+        "age": 30,
+        "department": "Security",
+        "leaveType": "Vacation Leave",
+        "duration": 2
+      
+     
+      },
+      {
+        "id": 5,
+        "name": "John Doe",
+        "status": "Pending",
+        "age": 30,
+        "department": "HR",
+        "leaveType": "Sick Leave",
+        "duration": 8
+      
+      },
+      {
+        "id": 6,
+        "name": "John Doe",
+        "status": "approve",
+        "age": 30,
+        "department": "Clinic",
+        "leaveType": "Sick Leave",
+        "duration": 1
+      
+      },
+      {
+        "id": 7,
+        "name": "John Doe",
+        "status": "approve",
+        "age": 30,
+        "department": "Clinic",
+        "leaveType": "Sick Leave",
+        "duration": 1
+      
+      },
+      {
+        "id": 8,
+        "name": "John Doe",
+        "status": "approve",
+        "age": 30,
+        "department": "Clinic",
+        "leaveType": "Sick Leave",
+        "duration": 1
+      
+      }
+ 
+    ]
+  
