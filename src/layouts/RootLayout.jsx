@@ -62,8 +62,9 @@ export const RootLayout = () => {
 
           <Box
             as="main"
-            h="91vh"
+            minH="91vh"
             bg={useColorModeValue("gray.100", "blue.900")}
+            className="p-5"
           >
             <Outlet></Outlet>
           </Box>
