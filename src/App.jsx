@@ -8,29 +8,45 @@ import { Register } from "./pages/Auth/Register";
 import Approval from "./pages/Approval/Approval";
 import LeaveDetails from './pages/LeaveDetails/LeaveDetails';
 import LeaveRequest from './pages/LeaveRequest/LeaveRequest';
-
-
-
-
+import { Personal } from "./pages/Personal/Personal";
+import { LeaveList } from "./pages/Leave/LeaveList";
+import { Approval } from "./pages/Leave/Approval";
+import { Toaster } from "react-hot-toast";
+import { ProtectedRoute } from "./pages/ProtectedRoute";
+import { RedirectIfLoggedIn } from "./pages/RedirectIfLoggedIn";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
-        <Route path="/" element={<RootLayout />}>
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="leave/request" element={<LeaveRequest />} />
-          <Route path="leave/approval" element={<Approval />} />
-          <Route path="leave/approval/details" element={<LeaveDetails />} />
-       
-      
-        </Route>
-        <Route element={<AuthLayout />}>
+        <Route
+          element={
+            <RedirectIfLoggedIn>
+              <AuthLayout />
+            </RedirectIfLoggedIn>
+          }
+        >
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Route>
+
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <RootLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="personal" element={<Personal />} />
+          <Route path="leave">
+            <Route path="approval" element={<Approval />} />
+            <Route path="list" element={<LeaveList />} />
+          </Route>
+        </Route>
       </Routes>
+      <Toaster />
     </BrowserRouter>
   );
 }

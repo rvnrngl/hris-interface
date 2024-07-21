@@ -1,1 +1,0 @@
-Gobal states goes here!
