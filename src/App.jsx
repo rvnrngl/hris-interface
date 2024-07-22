@@ -14,10 +14,12 @@ import { Toaster } from "react-hot-toast";
 import { ProtectedRoute } from "./pages/ProtectedRoute";
 import { RedirectIfLoggedIn } from "./pages/RedirectIfLoggedIn";
 import { LeaveForm } from "./pages/Leave/LeaveForm";
+import { LoadingOverlay } from "./pages/LoadingOverlay";
 
 function App() {
   return (
     <BrowserRouter>
+      <LoadingOverlay />
       <Routes>
         <Route
           element={

@@ -17,8 +17,10 @@ import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { createAccount } from "../../services/authService";
+import { useLoadingStore } from "../../store/loadingStore";
 
 export const Register = () => {
+  const setLoading = useLoadingStore((state) => state.setLoading);
   const [show, setShow] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [isEmployee, setIsEmployee] = useState();
@@ -32,10 +34,12 @@ export const Register = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setLoading(true);
     data.employeeNo = isEmployee ? data.employeeNo : "";
     delete data.confirmPassword;
 
     const res = await createAccount(data);
+    setLoading(false);
 
     if (res.isSuccess) {
       toast.success(res.message);
