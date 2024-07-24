@@ -15,6 +15,7 @@ import { ProtectedRoute } from "./pages/ProtectedRoute";
 import { RedirectIfLoggedIn } from "./pages/RedirectIfLoggedIn";
 import { LeaveForm } from "./pages/Leave/LeaveForm";
 import { LoadingOverlay } from "./pages/LoadingOverlay";
+import { RegisterV2 } from "./pages/Auth/RegisterV2";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           }
         >
           <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
+          <Route path="register" element={<RegisterV2 />} />
         </Route>
 
         <Route

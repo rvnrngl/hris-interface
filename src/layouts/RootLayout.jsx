@@ -26,7 +26,7 @@ export const RootLayout = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <>
-      <Box as="section" bg="#f5f9ff" minH="100vh">
+      <Box as="section" bg="#F5F5F5" minH="100vh">
         <Sidebar isOpen={isOpen} onClose={onClose} />
 
         <Box ml={{ base: 0, md: 60 }} transition=".3s ease">
