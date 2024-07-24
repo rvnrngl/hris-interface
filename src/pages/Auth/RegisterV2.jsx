@@ -1,6 +1,8 @@
 import {
+  Avatar,
   Button,
   CardBody,
+  Flex,
   FormControl,
   FormHelperText,
   FormLabel,
@@ -10,8 +12,10 @@ import {
   InputRightElement,
   Radio,
   RadioGroup,
+  Stack,
+  Text,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -19,12 +23,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { createAccount } from "../../services/authService";
 import { useLoadingStore } from "../../store/loadingStore";
 
-export const Register = () => {
+export const RegisterV2 = () => {
   const setLoading = useLoadingStore((state) => state.setLoading);
   const [show, setShow] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [isEmployee, setIsEmployee] = useState();
   const navigate = useNavigate();
+  const formRef = useRef(null);
 
   const {
     handleSubmit,
@@ -54,13 +59,10 @@ export const Register = () => {
   const password = watch("password");
 
   return (
-    <>
-      <CardBody className="w-full md:w-[730px]">
-        <h1 className="mb-5 text-center text-2xl font-bold">
-          Register Account
-        </h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="mb-5 grid h-[350px] w-full grid-cols-1 gap-5 overflow-y-scroll px-2 pb-3 sm:grid-cols-2">
+    <main className="grid h-screen w-screen grid-cols-3 bg-white">
+      <section className="col-span-2 w-full place-self-center">
+        <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
+          <div className="grid grid-cols-2 gap-10 p-10">
             <Input id="role" type="hidden" value="User" {...register("role")} />
 
             <FormControl isInvalid={errors.regionCode}>
@@ -68,6 +70,7 @@ export const Register = () => {
                 Region Code <span className="text-red-500">*</span>
               </FormLabel>
               <Input
+                borderColor="lightgray"
                 id="regionCode"
                 placeholder="Enter region code"
                 type="text"
@@ -80,6 +83,7 @@ export const Register = () => {
                 Email Address <span className="text-red-500">*</span>
               </FormLabel>
               <Input
+                borderColor="lightgray"
                 id="email"
                 placeholder="Enter email address"
                 type="email"
@@ -92,6 +96,7 @@ export const Register = () => {
                 First Name <span className="text-red-500">*</span>
               </FormLabel>
               <Input
+                borderColor="lightgray"
                 id="firstName"
                 placeholder="Enter first name"
                 type="text"
@@ -102,6 +107,7 @@ export const Register = () => {
             <FormControl>
               <FormLabel htmlFor="middleName">Middle Name</FormLabel>
               <Input
+                borderColor="lightgray"
                 id="middleName"
                 placeholder="Enter middle name"
                 type="text"
@@ -114,6 +120,7 @@ export const Register = () => {
                 Last Name <span className="text-red-500">*</span>
               </FormLabel>
               <Input
+                borderColor="lightgray"
                 id="lastName"
                 placeholder="Enter last name"
                 type="text"
@@ -126,6 +133,7 @@ export const Register = () => {
                 Address <span className="text-red-500">*</span>
               </FormLabel>
               <Input
+                borderColor="lightgray"
                 id="address"
                 placeholder="Enter address"
                 type="text"
@@ -139,6 +147,7 @@ export const Register = () => {
               </FormLabel>
               <InputGroup>
                 <Input
+                  borderColor="lightgray"
                   id="password"
                   placeholder="Enter password"
                   type={show ? "text" : "password"}
@@ -158,6 +167,7 @@ export const Register = () => {
               </FormLabel>
               <InputGroup>
                 <Input
+                  borderColor="lightgray"
                   id="confirmPassword"
                   placeholder="Enter confirm password"
                   type={showConfirm ? "text" : "password"}
@@ -191,6 +201,7 @@ export const Register = () => {
               <RadioGroup defaultValue="no">
                 <HStack spacing="24px">
                   <Radio
+                    borderColor="lightgray"
                     id="yes"
                     value="yes"
                     onChange={() => setIsEmployee(true)}
@@ -198,6 +209,7 @@ export const Register = () => {
                     Yes
                   </Radio>
                   <Radio
+                    borderColor="lightgray"
                     id="no"
                     value="no"
                     onChange={() => setIsEmployee(false)}
@@ -214,6 +226,7 @@ export const Register = () => {
                   Employee No. <span className="text-red-500">*</span>
                 </FormLabel>
                 <Input
+                  borderColor="lightgray"
                   id="employeeNo"
                   placeholder="Enter employee no."
                   type="text"
@@ -229,6 +242,7 @@ export const Register = () => {
                   Employee No. <span className="text-red-500">*</span>
                 </FormLabel>
                 <Input
+                  borderColor="lightgray"
                   id="employeeNoDummy"
                   placeholder="Enter employee no."
                   type="text"
@@ -239,7 +253,24 @@ export const Register = () => {
               </FormControl>
             )}
           </div>
-          <Button type="submit" colorScheme="blue" className="mb-5 w-full">
+        </form>
+      </section>
+      <section className="col-span-1 flex items-start justify-center bg-login-image bg-cover pt-28 shadow-md">
+        <Flex
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="start"
+          gap="1rem"
+        >
+          <Avatar size="xl" />
+          <Text fontSize="1.5rem" fontWeight="bold">
+            Register Account
+          </Text>
+          <Button
+            onClick={() => formRef.current.requestSubmit()}
+            colorScheme="blue"
+            className="w-full"
+          >
             Register
           </Button>
           <div className="inline-flex w-full justify-center gap-x-1 text-sm">
@@ -248,8 +279,8 @@ export const Register = () => {
               Login
             </Link>
           </div>
-        </form>
-      </CardBody>
-    </>
+        </Flex>
+      </section>
+    </main>
   );
 };

@@ -26,11 +26,7 @@ export const RootLayout = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <>
-      <Box
-        as="section"
-        bg={useColorModeValue("gray.50", "gray.700")}
-        minH="100vh"
-      >
+      <Box as="section" bg="#F5F5F5" minH="100vh">
         <Sidebar isOpen={isOpen} onClose={onClose} />
 
         <Box ml={{ base: 0, md: 60 }} transition=".3s ease">
@@ -60,12 +56,7 @@ export const RootLayout = () => {
             </Flex>
           </Flex>
 
-          <Box
-            as="main"
-            minH="91vh"
-            bg={useColorModeValue("gray.100", "blue.900")}
-            className="p-5"
-          >
+          <Box as="main" minH="91vh" className="p-5">
             <Outlet></Outlet>
           </Box>
         </Box>

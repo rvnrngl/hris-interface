@@ -8,8 +8,10 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { useAuthStore } from "../../store/authStore";
+import { formatUserName } from "../../helpers/formatUserName";
 
 export const NavbarMenu = () => {
+  const user = useAuthStore((state) => state.user);
   const logOut = useAuthStore((state) => state.logOut);
 
   const OnLogout = () => {
@@ -28,8 +30,11 @@ export const NavbarMenu = () => {
           cursor="pointer"
         />
       </MenuButton>
-      <MenuList className="w-fit" minWidth="140px">
-        <MenuGroup title="Profile">
+      <MenuList className="w-fit overflow-hidden" minWidth="140px">
+        <MenuGroup
+          title={formatUserName(user)}
+          className="line-clamp-1 w-[140px]"
+        >
           <MenuItem className="text-sm">My Account</MenuItem>
           <MenuItem onClick={() => OnLogout()} className="text-sm">
             Logout

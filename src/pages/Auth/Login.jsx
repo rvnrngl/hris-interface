@@ -14,9 +14,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { userLogin } from "../../services/authService";
 import toast from "react-hot-toast";
 import { useAuthStore } from "../../store/authStore";
+import { useLoadingStore } from "../../store/loadingStore";
 
 export const Login = () => {
   const setUserProfile = useAuthStore((state) => state.setUserProfile);
+  const setLoading = useLoadingStore((state) => state.setLoading);
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
@@ -27,8 +29,9 @@ export const Login = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setLoading(true);
     const res = await userLogin(data);
-
+    setLoading(false);
     if (res.isSuccess) {
       setUserProfile(res.result);
       navigate("/dashboard");
