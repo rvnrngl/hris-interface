@@ -6,7 +6,7 @@ import { Box, Button, ButtonGroup, Flex, Text } from "@chakra-ui/react";
 export const Approval = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 4; // Updated to 6
+  const usersPerPage = 6; // Set to 6 items per page
 
   useEffect(() => {
     // Simulating fetching data from Leave.json
@@ -52,7 +52,7 @@ export const Approval = () => {
               {index + 1}
             </Button>
           ))}
-          <Button
+          <Button 
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
