@@ -20,8 +20,8 @@ const LeaveDetails = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 ">
-      <div className=" shadow-lg rounded-lg w-[60vw] p-6 bg-blue-100 ">
+    <div className="flex justify-center items-center min-h-screen  ">
+    <div className="shadow-lg rounded-lg w-[60vw] p-6 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400">
         <div className="text-center py-3">
           <h1 className="font-semibold text-xl">Republic of the Philippines</h1>
           <p className="text-md">Department of Education</p>

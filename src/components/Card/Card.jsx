@@ -8,7 +8,7 @@ export const Card = ({ user }) => {
       : "bg-red-100 text-red-800";
 
   return (
-    <div className="mx-auto my-4 max-w-2xl rounded-lg border border-gray-200 bg-white p-6 shadow-lg dark:border-gray-700 dark:bg-gray-800">
+    <div className="mx-auto my-4 max-w-md rounded-lg border border-gray-200 bg-white p-4 shadow-lg dark:border-gray-700 dark:bg-gray-800">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         <div className="flex flex-col">
           <h2 className="text-lg font-semibold text-gray-700 dark:text-white">
