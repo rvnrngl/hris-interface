@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BasicInfo } from '../../components/LeaveDetailsComponent/BasicInfo';
-import { ApplicationDetails } from '../../components/LeaveDetailsComponent/ApplicationDetails';
+import {ApplicationDetails} from '../../components/LeaveDetailsComponent/ApplicationDetails';
+
 
 
 const LeaveMilestone = () => {
@@ -53,7 +54,7 @@ const LeaveDetails = () => {
         </div>
 
         {activeTab === 1 && <BasicInfo />}
-        {activeTab === 2 && <ApplicationDetails />}
+        {activeTab === 2 && <ApplicationDetails/>}
       </div>
     </div>
   );
