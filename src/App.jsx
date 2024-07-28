@@ -16,6 +16,7 @@ import { RedirectIfLoggedIn } from "./pages/RedirectIfLoggedIn";
 import { LeaveForm } from "./pages/Leave/LeaveForm";
 import { LoadingOverlay } from "./pages/LoadingOverlay";
 import { RegisterV2 } from "./pages/Auth/RegisterV2";
+import { UserProfile } from "./pages/UserProfile/UserProfile";
 
 function App() {
   return (
@@ -48,6 +49,9 @@ function App() {
             <Route path="list" element={<LeaveList />} />
             <Route path="details" element={<LeaveDetails />} />
             <Route path="form" element={<LeaveForm />} />
+          </Route>
+          <Route path="user">
+            <Route path="profile" element={<UserProfile />} />
           </Route>
         </Route>
       </Routes>

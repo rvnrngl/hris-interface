@@ -21,6 +21,7 @@ import { FiMenu } from "react-icons/fi";
 import { Sidebar } from "../components/Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
 import { NavbarMenu } from "../components/Menu/NavbarMenu";
+import { Navbar } from "../components/Menu/Navbar";
 
 export const RootLayout = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -30,35 +31,11 @@ export const RootLayout = () => {
         <Sidebar isOpen={isOpen} onClose={onClose} />
 
         <Box ml={{ base: 0, md: 60 }} transition=".3s ease">
-          <Flex
-            as="header"
-            align="center"
-            justifyContent={{ base: "space-between", md: "flex-end" }}
-            w="full"
-            px="4"
-            borderBottomWidth="1px"
-            borderColor={useColorModeValue("inherit", "gray.700")}
-            bg={useColorModeValue("white", "gray.800")}
-            boxShadow="sm"
-            h="9vh"
-          >
-            <IconButton
-              aria-label="Menu"
-              display={{ base: "inline-flex", md: "none" }}
-              onClick={onOpen}
-              icon={<FiMenu />}
-              size="md"
-            />
+          <Navbar onOpen={onOpen}>
+            <NavbarMenu />
+          </Navbar>
 
-            <Flex align="center">
-              <Icon color="gray.500" as={FaBell} cursor="pointer" />
-              <NavbarMenu />
-            </Flex>
-          </Flex>
-
-          <Box as="main" minH="91vh" className="p-5">
-            <Outlet></Outlet>
-          </Box>
+          <Outlet></Outlet>
         </Box>
       </Box>
     </>
