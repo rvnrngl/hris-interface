@@ -1,16 +1,22 @@
 import React from "react";
-import { PageWrapper } from "../../components/Page/PageWrapper";
-import { CardBody } from "@chakra-ui/react";
+import { Card, CardBody } from "@chakra-ui/react";
 import { PageHeader } from "../../components/Page/PageHeader";
 import { Table } from "../../components/Table/Table";
+import { PageWrapper } from "../../components/Page/PageWrapper";
 
 export const LeaveList = () => {
   return (
     <PageWrapper>
-      <PageHeader title="List of Leaves" buttonTitle="Add Leave" />
-      <CardBody>
-        <Table />
-      </CardBody>
+      <PageHeader
+        title="Leave Requests"
+        buttonTitle="Add Leave"
+        route="/leave/form"
+      />
+      <Card>
+        <CardBody>
+          <Table />
+        </CardBody>
+      </Card>
     </PageWrapper>
   );
 };

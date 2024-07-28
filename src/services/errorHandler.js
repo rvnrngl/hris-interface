@@ -1,6 +1,7 @@
 import { HTTP_STATUS_CODES } from "../constants/httpStatusCodes";
 
 export const logError = (error, funcName) => {
+  let message = "Something wrong happened. Try again later.";
   if (!error.response.status) {
     console.error(error);
   } else if (error.response.status === HTTP_STATUS_CODES.NOT_FOUND) {
@@ -12,6 +13,7 @@ export const logError = (error, funcName) => {
       `Error in ${funcName}: ${HTTP_STATUS_CODES.BAD_REQUEST} - ${error.response.statusText}`,
     );
   } else if (error.response.status === HTTP_STATUS_CODES.UNAUTHORIZED) {
+    message = "Session expired";
     console.error(
       `Error in ${funcName}: ${HTTP_STATUS_CODES.UNAUTHORIZED} - ${error.response.statusText}`,
     );
@@ -29,6 +31,6 @@ export const logError = (error, funcName) => {
 
   return {
     isSuccess: false,
-    message: "Something wrong happened. Try again later.",
+    message,
   };
 };

@@ -72,7 +72,7 @@ export const RegisterV2 = () => {
               <Input
                 borderColor="lightgray"
                 id="regionCode"
-                placeholder="Enter region code"
+                placeholder="Enter Region Code"
                 type="text"
                 {...register("regionCode", { required: true })}
               />
@@ -85,7 +85,7 @@ export const RegisterV2 = () => {
               <Input
                 borderColor="lightgray"
                 id="email"
-                placeholder="Enter email address"
+                placeholder="Enter Email Address"
                 type="email"
                 {...register("email", { required: true })}
               />
@@ -98,7 +98,7 @@ export const RegisterV2 = () => {
               <Input
                 borderColor="lightgray"
                 id="firstName"
-                placeholder="Enter first name"
+                placeholder="Enter First Name"
                 type="text"
                 {...register("firstName", { required: true })}
               />
@@ -109,7 +109,7 @@ export const RegisterV2 = () => {
               <Input
                 borderColor="lightgray"
                 id="middleName"
-                placeholder="Enter middle name"
+                placeholder="Enter Middle Name"
                 type="text"
                 {...register("middleName", { required: true })}
               />
@@ -122,7 +122,7 @@ export const RegisterV2 = () => {
               <Input
                 borderColor="lightgray"
                 id="lastName"
-                placeholder="Enter last name"
+                placeholder="Enter Last Name"
                 type="text"
                 {...register("lastName", { required: true })}
               />
@@ -135,7 +135,7 @@ export const RegisterV2 = () => {
               <Input
                 borderColor="lightgray"
                 id="address"
-                placeholder="Enter address"
+                placeholder="Enter Address"
                 type="text"
                 {...register("address", { required: true })}
               />
@@ -149,7 +149,7 @@ export const RegisterV2 = () => {
                 <Input
                   borderColor="lightgray"
                   id="password"
-                  placeholder="Enter password"
+                  placeholder="Enter Password"
                   type={show ? "text" : "password"}
                   {...register("password", { required: true })}
                 />
@@ -169,7 +169,7 @@ export const RegisterV2 = () => {
                 <Input
                   borderColor="lightgray"
                   id="confirmPassword"
-                  placeholder="Enter confirm password"
+                  placeholder="Enter Confirm Password"
                   type={showConfirm ? "text" : "password"}
                   {...register("confirmPassword", {
                     required: true,
@@ -228,7 +228,7 @@ export const RegisterV2 = () => {
                 <Input
                   borderColor="lightgray"
                   id="employeeNo"
-                  placeholder="Enter employee no."
+                  placeholder="Enter Employee No."
                   type="text"
                   {...register("employeeNo", { required: true })}
                 />
@@ -244,7 +244,7 @@ export const RegisterV2 = () => {
                 <Input
                   borderColor="lightgray"
                   id="employeeNoDummy"
-                  placeholder="Enter employee no."
+                  placeholder="Enter Employee No."
                   type="text"
                 />
                 <FormHelperText>
