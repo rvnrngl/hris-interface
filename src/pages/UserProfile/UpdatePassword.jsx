@@ -70,7 +70,7 @@ export const UpdatePassword = ({ userAccessId }) => {
             <InputGroup>
               <Input
                 id="password"
-                placeholder="Enter Current Password"
+                placeholder="Enter New Password"
                 type={show.password ? "text" : "password"}
                 {...register("password", { required: true })}
               />
