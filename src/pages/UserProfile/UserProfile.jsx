@@ -24,6 +24,7 @@ import profileImage from "../../assets/profile/profile.png";
 import toast from "react-hot-toast";
 import { saveUserProfile } from "../../services/userService";
 import { useLoadingStore } from "../../store/loadingStore";
+import { UpdatePassword } from "./UpdatePassword";
 
 export const UserProfile = () => {
   const user = useAuthStore((state) => state.user);
@@ -75,6 +76,32 @@ export const UserProfile = () => {
 
         <CardBody className="mt-20">
           <form onSubmit={handleSubmit(onSubmit)}>
+            <Text className="mb-6" fontWeight="bold">
+              User Credentials
+            </Text>
+            <Grid gap={6} className="mb-5 md:grid-cols-2">
+              <FormControl variant="floating" id="employeeNo">
+                <Input
+                  isReadOnly
+                  type="text"
+                  placeholder=" "
+                  value={user.employeeNo ? user.employeeNo : "001"}
+                  {...register("employeeNo")}
+                />
+                <FormLabel>Employee No.</FormLabel>
+              </FormControl>
+
+              <FormControl variant="floating" id="email">
+                <Input
+                  isReadOnly
+                  type="email"
+                  placeholder=" "
+                  {...register("email")}
+                />
+                <FormLabel>Email</FormLabel>
+              </FormControl>
+            </Grid>
+
             <Input
               id="userId"
               type="hidden"
@@ -183,42 +210,40 @@ export const UserProfile = () => {
               </Flex>
             </Box>
 
-            <Text className="mb-6" fontWeight="bold">
-              User Credentials
+            {/* <Text className="mb-6" fontWeight="bold">
+              Update Credentails
             </Text>
             <Grid gap={6} className="mb-5 md:grid-cols-2">
-              <FormControl variant="floating" id="employeeNo">
+              <FormControl id="password">
+                <FormLabel>Current Password</FormLabel>
                 <Input
-                  isReadOnly
-                  type="text"
-                  placeholder=" "
-                  value={user.employeeNo ? user.employeeNo : "001"}
-                  {...register("employeeNo")}
+                  type="password"
+                  placeholder="Enter Current Password"
+                  {...register("password")}
                 />
-                <FormLabel>Employee No.</FormLabel>
               </FormControl>
 
-              <FormControl variant="floating" id="email">
+              <FormControl id="confirmPassword">
+                <FormLabel>Confirm Password</FormLabel>
                 <Input
-                  isReadOnly
-                  type="email"
-                  placeholder=" "
-                  {...register("email")}
+                  type="password"
+                  placeholder="Enter Confirm Password"
+                  {...register("confirmPassword")}
                 />
-                <FormLabel>Email</FormLabel>
               </FormControl>
-
-              <Box>
-                <Button
-                  onClick={() => toast("Nothing yet!")}
-                  type="button"
-                  colorScheme="blue"
-                >
-                  Update Password
-                </Button>
-              </Box>
             </Grid>
+
+            <Flex justifyContent="right">
+              <Button
+                onClick={() => toast("Nothing yet!")}
+                type="button"
+                colorScheme="blue"
+              >
+                Update Password
+              </Button>
+            </Flex> */}
           </form>
+          <UpdatePassword userAccessId={user.userAccessId} />
         </CardBody>
       </Card>
     </PageWrapper>
