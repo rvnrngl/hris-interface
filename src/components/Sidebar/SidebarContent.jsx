@@ -54,7 +54,7 @@ export const SidebarContent = ({ ...props }) => {
           color={useColorModeValue("brand.500", "white")}
           fontWeight="semibold"
         >
-          LOGO HERE
+          HRIS
         </Text>
       </Flex>
       <Flex

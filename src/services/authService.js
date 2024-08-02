@@ -40,3 +40,17 @@ export const createAccount = async (dto) => {
     return logError(error, createAccount.name);
   }
 };
+
+export const updatePassword = async (dto) => {
+  try {
+    const response = await api.post("/auth/change-password", dto);
+
+    if (!response.data.isSuccess) {
+      return { isSuccess: false, message: response.data };
+    }
+
+    return response.data;
+  } catch (error) {
+    return logError(error, updatePassword.name);
+  }
+};
